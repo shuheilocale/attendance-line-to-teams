@@ -1,0 +1,26 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.app
+
+libraries:
+- name: ssl
+  version: latest
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 3000ms
+  max_pending_latency: automatic
+  
+env_variables:
+  CHANNEL_SECRET: '' # your channel secret
+  HOME_URL: '' # your home url
+  CHANNEL_ACCESS_TOKEN: '' # your channel access token
+  LIFF_URL: '' # your liff url
+  WEBHOOK_URL: '' # your teams webhook url
+  WEBHOOK_URL_SUB: '' # your teams sub-webhook url
+  
